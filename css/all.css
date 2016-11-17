@@ -10922,12 +10922,23 @@ a.custom-button span {
 	position: absolute;
 	display: block;
 	top: 50%;
-	margin-top: -15px;
+	margin-top: -23px;
 	left: 30px;
+}
+.logo a {
+    width: 46px;
+    height: 46px;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    border-radius: 100%;
+    overflow: hidden;
 }
 .logo img {
 	display:block;
-	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    max-width: 100%;
+    max-height: 100%;
+	-m-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
 	-khtml-opacity: 1;
 	-moz-opacity: 1;
 	opacity: 1;
