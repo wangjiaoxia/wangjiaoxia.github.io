@@ -83,8 +83,8 @@ $(document).ready(function($) {
 		            divs.css({
 		                'margin-top': -(st / 0) + "px",
 		                'opacity': 0.7 - st / 1100
-                    //'opacity': 0
-		                // 'opacity': 0.9 - st / 1600
+                      //'opacity': 0
+		             // 'opacity': 0.9 - st / 1600
 		            });
 		        });
 		    });

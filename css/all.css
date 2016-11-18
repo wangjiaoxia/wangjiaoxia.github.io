@@ -11318,7 +11318,6 @@ span.sb-caret { /* Caret Down */
 	color: #333;
 	font-family: 'Georgia', serif, Helvetica, "Helvetica Neue", "Hiragino Sans GB", "Microsoft YaHei", "Source Han Sans CN", "WenQuanYi Micro Hei", Arial, sans-serif;
 	font-size: 18px;
-	display: inline-block;
 }
 @media (max-width:1024px) {
 	#hero {
