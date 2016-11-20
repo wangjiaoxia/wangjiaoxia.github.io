@@ -1,0 +1,21 @@
+{
+  "name": "wangjiaoxia.github.io",
+  "version": "1.0.0",
+  "description": "wangjiaoxia github IO page",
+  //"main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wangjiaoxia/wangjiaoxia.github.io.git"
+  },
+  "author": "Wangjiaoxia",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wangjiaoxia/wangjiaoxia.github.io.git/issues"
+  },
+  "homepage": "https://github.com/wangjiaoxia/wangjiaoxia.github.io.git#readme"
+}
