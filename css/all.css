@@ -11080,10 +11080,10 @@ nav i.icon-basic-eye {
 /* *******************************************************
 * Off-canvas navigation, (across all pages)
 ******************************************************* */
-/* Bug fix */
+/* Bug fix
 #sb-site {
 	min-height:100% !important;
-}
+}*/
 .learnmore {
 	position: absolute;
 	right: 0;
