@@ -1,8 +1,8 @@
 github: {
 	"version": {},
-	"author": "Wangjiaoxia",
+	"author": "wangjiaoxia",
 	"hostname": "https://github.com/wangjiaoxia/",
-	"pages_hostname": "https://wangjiaoxia.github.io/"
+	"pages_hostname": "http://wangjiaoxia.github.io/"
 }
 #source: ./
 #destination: ./_site
