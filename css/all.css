@@ -11056,7 +11056,7 @@ nav i.icon-basic-eye {
 }
 @media only screen and (max-width: 1024px) {
 
-	.logo img:hover {
+	.logo a:hover {
 		top:0px;
 		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
 		-khtml-opacity: 1;
