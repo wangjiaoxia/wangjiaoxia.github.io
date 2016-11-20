@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<!--<![endif]-->
+<head>
+    <title>WJX blog</title>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="Beginner">
+    <meta name="author" content="KM">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <link rel="stylesheet" href="./css/all.css" media="screen" type="text/css">
+    <link rel="stylesheet" href="./css/highlightjs/tomorrow.css" type="text/css">
+    <script src="./js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+</head>
+
+<body id="index" class="lightnav animsition">
+    <!--右侧导航--> 
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="./img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+            <li>
+                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    <li><a href="/" target="_BLANK" class="animsition-link">Return</a></li>
+                    <li><a href="#" target="_BLANK" class="animsition-link">Follow</a></li>
+                </ul>
+            </li>
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+        <li><a href="#" class="animsition-link" title="about">About</a></li>
+        </ul>
+    </div>
+    <!--右侧导航 end--> 
+
+    <!--Wrapper-->
+    <div id="sb-site">
+        <!--顶部导航-->
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!--头像-->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                            <img src="./img/logo.jpg" alt="Logo" /> 
+                        </a>
+                    </div>
+                    <!--info bar-->
+                    <nav>
+                       <ul class="nav">
+                            <li><a href="/" class="animsition-link">Beginner</a></li>
+                            <li class="nolink"><span>Slowly </span>learning.</li>
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul> 
+                    </nav>
+                </div>
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar before"></span>
+                    <span class="icon-bar main"></span>
+                    <span class="icon-bar after"></span>
+                </button>
+            </div>
+        </div>
+        <!--顶部导航 end-->
+
+        <!--Hero Image-->
+        <section id="hero" class="scrollme">
+            <div class="container-fluid element-img" style="background: url(./img/bg_img.jpg) no-repeat center center fixed;background-size: cover">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 vertical-align cover boost text-center">
+                        <div class="center-me animateme" data-when="exit" data-from="0" data-to="0.6" data-opacity="0" data-translatey="100">
+                            <div>
+                                <h2>PLEASE ANSWER</h2>
+                                <p>一九八八</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="herofade beige-dk"></div>
+            </div>
+        </section>	
+        <div class="heightblock" style="height: 1006px;"></div>
+        <!--Hero Image end-->
+
+        <!--Content-->
+        <section id="intro">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2 opening-statement">
+                        <div class="col-md-4">
+                            <h3><a href="/_posts/161117-index.html/">标题</a></h3>
+                            <span class="post-meta">
+                                <time datetime="2016-04-01T18:43:46.000Z" itemprop="datePublished">2016-11-17</time>
+                            </span>
+                        </div>
+                        <div class="col-md-8">
+                            <p>标题解释</p>
+                            <p class="pull-right readMore">
+                                <a href="/_posts/161117-index.html/">Read More...</a>
+                            </p>
+                        </div>
+                        <hr class="nogutter">
+                    </div>
+                </div>
+            </div> 
+        </section>
+        <!--Content end-->
+
+    </div>
+    <!--Wrapper end-->
+
+	<!--footer-->
+	<footer>
+		<div class="container">
+			<div class="copy">
+				<p>
+					&copy; 2016<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By BEGINNER 
+				</p>
+			</div>
+		</div>
+	</footer>	
+	<!--footer end-->
+
+<!--首页大图调整js-->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+    
+    resizeHero();
+    
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+
+<!--页面所需插件-->
+<script src="./js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="./js/jquery.flexslider-min.js"></script><!-- Flexslider plugin -->
+<script src="./js/scripts.js"></script><!-- Theme scripts -->
+
+<!-- Initiate flexslider plugin -->
+<script type="text/javascript">
+    $(document).ready(function($) {
+      $('.flexslider').flexslider({
+        animation: "fade",
+        prevText: "",
+        nextText: "",
+        directionNav: true
+      });
+    });
+</script>
+</body>
+</html>
