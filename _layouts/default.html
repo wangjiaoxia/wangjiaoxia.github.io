@@ -79,8 +79,37 @@
         </div>
         <!--顶部导航 end-->
 
-        {{ content }}
+        <!--Hero Image-->
+        <section id="hero" class="scrollme">
+            <div class="container-fluid element-img" style="background: url(./img/bg_img.jpg) no-repeat center center fixed;background-size: cover">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 vertical-align cover boost text-center">
+                        <div class="center-me animateme" data-when="exit" data-from="0" data-to="0.6" data-opacity="0" data-translatey="100">
+                            <div>
+                                <h2>PLEASE ANSWER</h2>
+                                <p>一九八八</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="herofade beige-dk"></div>
+            </div>
+        </section>	
+        <div class="heightblock" style="height: 1006px;"></div>
+        <!--Hero Image end-->
 
+        <!--Content-->
+        <section id="intro">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2 opening-statement">
+                        {{ content }}
+                        <hr class="nogutter">
+                    </div>
+                </div>
+            </div> 
+        </section>
+        <!--Content end-->
     </div>
     <!--Wrapper end-->
 
