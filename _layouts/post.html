@@ -81,7 +81,27 @@
 
         {{ content }}
 
-    </div>
+		<!-- 多说评论框 start -->
+		<div id="ds_ele" class="ds-thread" data-thread-key="" data-title="Hello Word!" data-url="http://yj1438.github.io/2016/06/06/node_modules.html"></div>
+		<!-- 多说评论框 end -->
+		<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+		<script type="text/javascript">
+			var url = window.location.pathname;
+			url = url.substr(1, url.length -6).replace(/\//gi, '_');
+			document.getElementById('ds_ele').dataset.threadKey = url;
+			var duoshuoQuery = {short_name:"yj1438"};
+			(function() {
+				var ds = document.createElement('script');
+				ds.type = 'text/javascript';ds.async = true;
+				ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+				ds.charset = 'UTF-8';
+				(document.getElementsByTagName('head')[0] 
+				|| document.getElementsByTagName('body')[0]).appendChild(ds);
+			})();
+		</script>
+		<!-- 多说公共JS代码 end -->
+
+    <div>
     <!--Wrapper end-->
 
 	<!--footer-->
@@ -95,39 +115,6 @@
 		</div>
 	</footer>	
 	<!--footer end-->
-
-<!--首页大图调整js-->
-<script type="text/javascript">
-    var resizeHero = function () {
-        var hero = $(".cover,.heightblock"),
-            window1 = $(window);
-        hero.css({
-            "height": window1.height()
-        });
-    };
-    
-    resizeHero();
-    
-    $(window).resize(function () {
-        resizeHero();
-    });
-</script>
-
-<!--页面所需插件-->
-<script src="js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
-<script src="js/jquery.flexslider-min.js"></script><!-- Flexslider plugin -->
-<script src="js/scripts.js"></script><!-- Theme scripts -->
-
-<!-- Initiate flexslider plugin -->
-<script type="text/javascript">
-    $(document).ready(function($) {
-      $('.flexslider').flexslider({
-        animation: "fade",
-        prevText: "",
-        nextText: "",
-        directionNav: true
-      });
-    });
-</script>
 </body>
 </html>
+
