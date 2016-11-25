@@ -7,7 +7,7 @@ title: W's BLOG
 
 {% for post in site.posts %}
 <div class="col-md-4">
-    <h3><a href="{{site.baseurl}}{{post.url}}">{{post.title}}</a></h3>
+    <h3><a href="{{ post.url | prepend: site.baseurl }}">{{post.title}}</a></h3>
     <span class="post-meta">
         <time datetime="2016-04-01T18:43:46.000Z" itemprop="datePublished">时间</time>
     </span>
