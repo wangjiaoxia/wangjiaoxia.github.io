@@ -1,7 +1,8 @@
 ---
-layout: post
-title: 颜色 
+layout: homepage 
+title: color
 ---
 
-# 颜色
-
+{% for post in site.posts %}
+dfsadf
+{% endfor %}
