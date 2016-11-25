@@ -1,8 +1,8 @@
 github: {
-	"version": {},
-	"author": "wangjiaoxia",
-	"hostname": "https://github.com/wangjiaoxia/blog.git/",
-	"pages_hostname": "https://wangjiaoxia.github.io/"
+    "version": {},
+    "author": "yinjie",
+    "hostname": "https://github.com/yj1438/",
+    "pages_hostname": "http://yj1438.github.io/"
 }
 #source: ./
 #destination: ./_site
