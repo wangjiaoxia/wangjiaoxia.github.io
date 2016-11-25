@@ -3,9 +3,10 @@ layout: homepage
 title: W's BLOG
 ---
 
-<2>最新文章</2>
-{% for post in site.posts %}
+<2>最新文章0</2>
 
+{% for post in site.posts %}
+<!--
 <div class="col-md-4">
     <h3><a href="{{site.baseurl}}{{post.url}}">{{post.title}}</a></h3>
     <span class="post-meta">
@@ -18,5 +19,6 @@ title: W's BLOG
         <a href="{{site.baseurl}}{{post.url}}">Read More...</a>
     </p>
 </div>
-
+-->
+<h3><a href="{{site.baseurl}}{{post.url}}">{{post.title}}</a><span class="date" style="float: right;">{{post.date | date_to_string}} </span></h3>
 {% endfor %}
