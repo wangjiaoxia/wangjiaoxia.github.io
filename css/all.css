@@ -94,6 +94,8 @@ figure {
 
 hr {
 	height: 0;
+    margin-top: 40px;
+    margin-bottom: 40px;
 	-webkit-box-sizing: content-box;
 	-moz-box-sizing: content-box;
 	box-sizing: content-box
@@ -1791,7 +1793,6 @@ pre code {
 	font-size: inherit;
 	color: inherit;
 	white-space: pre-wrap;
-	background-color: transparent;
 	border-radius: 0
 }
 
@@ -10649,10 +10650,6 @@ a.meta,
 	-ms-transition: all ease .3s;
 	transition: all ease .3s;
 }
-hr {
-  margin-top: 40px;
-  margin-bottom: 40px;
-}
 /* Placeholder text color */
 input[placeholder],
 [placeholder],
@@ -14153,5 +14150,14 @@ pre .deletion {
 }
 
 #detail .article-content {
-    padding: 65px 20px 20px;
+    padding: 80px 20px 20px;
 }
+
+.article-content ul {
+    padding-left: 30px;
+}
+
+#ds-reset {
+    margin-top: 30px;    
+}
+
