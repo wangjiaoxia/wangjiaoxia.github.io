@@ -13734,8 +13734,8 @@ footer .footer-top {
 }
 
 footer .copy {
-	float: left;
 	margin-top: 5px;
+    text-align: center;
 }
 
 footer .copy p {
@@ -14145,4 +14145,13 @@ pre .clojure .title {
 
 pre .deletion {
 	color: #dc322f;
+}
+
+
+#detail .navbar-inner {
+    background: #fff;
+}
+
+#detail .article-content {
+    padding: 65px 20px 20px;
 }
