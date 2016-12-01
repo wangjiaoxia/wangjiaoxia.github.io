@@ -7,10 +7,12 @@ title: W's BLOG
 
 {% for post in site.posts %}
 <div class="artical-list">
-    <a class="pull-right readMore" href="{{site.baseurl}}{{post.url}}">Read More...</a>
+    <p class="pull-right readMore">
+        <a href="{{site.baseurl}}{{post.url}}">Read More...</a>
+    </p>
     <p>
         <a href="{{ post.url | prepend: site.baseurl }}">{{post.title}}</a>
-        <span class="list-time">{{post.date | date_to_string}}</span>
+        <span class="center-block">{{post.date | date_to_string}}</span>
     </p>
 </div>
 {% endfor %}
