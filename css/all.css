@@ -14166,3 +14166,7 @@ pre .deletion {
 #ds-thread #ds-reset li.ds-tab a.ds-current:hover{
     background: none;
 }
+
+#ds-thread #ds-reset a.ds-comment-context {
+    color: #e77064 !important;
+}
