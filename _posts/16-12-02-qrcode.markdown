@@ -7,29 +7,33 @@ title: Qrcode
 
 ### 简述
 
-二维码应用在我们的生活中随处可见，你只需要用手机对着二维码“扫一扫”或者长按图片识别二维码，即可获得该码对应信息，快速提升了我们对商家、购物、观影等信息的获取时间。接下来介绍一款基于jquery的二维码生成插件qrcode，在页面中调用该插件就能生成对应的二维码。
+二维码应用在我们的生活中随处可见，你只需要用手机对着二维码“扫一扫”或者长按图片识别二维码，即可获得该码对应信息，加速了我们对商家、购物、观影等信息的获取。接下来介绍一款基于jquery的二维码生成插件qrcode，在页面中调用该插件就能生成对应的二维码。
 
 ### 插件介绍
 
-jquery.qrcode.js 是用jquery方式封装起来的（jquery 版本可以自己选），通过使用jQuery实现图形渲染，画图，支持canvas（HTML5）和table两种方式。最新代码可以到github获取https://github.com/jeromeetienne/jquery-qrcode 
+jquery.qrcode.js 是用jquery方式封装起来的（jquery 版本可以自己选择），通过使用jQuery实现图形渲染，画图，支持canvas（HTML5）和table两种方式。最新代码可以到github获取https://github.com/jeromeetienne/jquery-qrcode 
 
 * 主要支持的功能：
 
 `
-text         : "https://wangjiaoxia.github.io/"  //设置二维码内容  
-render       : "canvas",//设置渲染方式，如果需要兼容性好些就是用table  
-width        : 256,     //设置宽度  
-height       : 256,     //设置高度  
-typeNumber   : -1,      //计算模式  
-correctLevel : QRErrorCorrectLevel.H,//纠错等级  
-background : "#ffffff",//背景颜色  
-foreground : "#000000" //前景颜色 
+
+    text         : "https://wangjiaoxia.github.io/"  //设置二维码内容  
+    render       : "canvas",//设置渲染方式，如果需要兼容性好些就是用table  
+    width        : 256,     //设置宽度  
+    height       : 256,     //设置高度  
+    typeNumber   : -1,      //计算模式  
+    correctLevel : QRErrorCorrectLevel.H,//纠错等级  
+    background : "#ffffff",//背景颜色  
+    foreground : "#000000" //前景颜色 
+
 `
 
 * 调用
 
 `
-jQuery('#output').qrcode({width:200,height:200,correctLevel:0,text:content});  
+
+    jQuery('#output').qrcode({width:200,height:200,correctLevel:0,text:content});  
+
 `
 
 * 测试结果
@@ -52,34 +56,36 @@ img2
 * 解决方案
 
 `
-function utf16to8(str) {  
-	var out, i, len, c;  
 
-	out = "";  
-	len = str.length;  
+    function utf16to8(str) {  
+        var out, i, len, c;  
+        out = "";  
+        len = str.length;  
+        for(i = 0; i < len; i++) {  
+            c = str.charCodeAt(i);  
+            if ((c >= 0x0001) && (c <= 0x007F)) {  
+                out += str.charAt(i);  
+            } else if (c > 0x07FF) {  
+                out += String.fromCharCode(0xE0 | ((c >> 12) & 0x0F));  
+                out += String.fromCharCode(0x80 | ((c >>  6) & 0x3F));  
+                out += String.fromCharCode(0x80 | ((c >>  0) & 0x3F));  
+            } else {  
+                out += String.fromCharCode(0xC0 | ((c >>  6) & 0x1F));  
+                out += String.fromCharCode(0x80 | ((c >>  0) & 0x3F));  
+            } 
+        } 
+        return out;  
+    }  
 
-	for(i = 0; i < len; i++) {  
-		c = str.charCodeAt(i);  
-		if ((c >= 0x0001) && (c <= 0x007F)) {  
-			out += str.charAt(i);  
-		} else if (c > 0x07FF) {  
-			out += String.fromCharCode(0xE0 | ((c >> 12) & 0x0F));  
-			out += String.fromCharCode(0x80 | ((c >>  6) & 0x3F));  
-			out += String.fromCharCode(0x80 | ((c >>  0) & 0x3F));  
-		} else {  
-			out += String.fromCharCode(0xC0 | ((c >>  6) & 0x1F));  
-			out += String.fromCharCode(0x80 | ((c >>  0) & 0x3F));  
-		} 
-	} 
-	return out;  
-}  
 `
 
 * 试用
 
 `
-var str = toUtf8("中文字符哦"); 
-$('#code').qrcode(str); 
+
+    var str = toUtf8("中文字符哦"); 
+    $('#qrcode').qrcode(str); 
+
 `
 
 * 测试结果
@@ -92,4 +98,6 @@ img3
     
 ***
 
-这里需要注意下使用渲染方式为table时，会出现二维码每个小格计算产生的误差，导致二维码生成后变形以至无法识别。解决的办法只能是计算每个小格的宽度，最后得到table的宽度。
+    这里需要注意下使用渲染方式为table时，会出现二维码每个小格计算产生的误差，导致二维码生成后变形以至无法识别。解决的办法只能是计算每个小格的宽度，最后得到table的宽度。
+
+    很佩服大神们做的各式各样的插件，用起来方便快捷只需要读一读API就能完成摸个功能。但是使用插件的基本准则还的有，就是“标准”“兼容”“可信赖”...

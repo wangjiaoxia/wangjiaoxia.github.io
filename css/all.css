@@ -14163,6 +14163,7 @@ footer {
 }
 
 footer #qrcode {
+    display: none;
     position: absolute;
     bottom: 0;
     left: 5%;
