@@ -14143,3 +14143,7 @@ footer #qrcode {
     bottom: 0;
     left: 5%;
 }
+
+#ds-thread #ds-reset .ds-powered-by a {
+    display: none !important;
+}
