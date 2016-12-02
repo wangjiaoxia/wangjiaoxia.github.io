@@ -1806,19 +1806,6 @@ pre code {
 	padding: 0 15px;
 }
 
-
-@media (min-width:992px) {
-	.container {
-		width: 970px
-	}
-}
-
-@media (min-width:1200px) {
-	.container {
-		width: 1170px
-	}
-}
-
 .container-fluid {
 	padding-right: 15px;
 	padding-left: 15px;
@@ -10610,12 +10597,6 @@ blockquote footer {
 .container {
   padding-right: 20px;
   padding-left: 20px;
-}
-@media (min-width: 768px) {
-	.container {
-		padding-left: 15px;
-		padding-right: 15px;
-	}
 }
 ::selection {
 	color: #ffffff;
