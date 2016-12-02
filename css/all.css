@@ -14158,11 +14158,13 @@ pre .deletion {
     color: #e77064 !important;
 }
 
-footer .container {
+footer {
     position: relative;
 }
+
 footer .container #qrcode {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 50%;
+    left: 10%;
+    margin-top: -40px;
 }
