@@ -8,11 +8,12 @@ title: W's BLOG
 {% for post in site.posts %}
 <div class="artical-list">
     <p class="pull-right readMore">
-        <a href="{{site.baseurl}}{{post.url}}">Read More...</a>
+        <a href="{{site.baseurl}}{{post.url}}">More</a>
     </p>
     <p>
         <a href="{{ post.url | prepend: site.baseurl }}">{{post.title}}</a>
         <span class="center-block">{{post.date | date_to_string}}</span>
     </p>
 </div>
+<div class="qrcode"></div>
 {% endfor %}
