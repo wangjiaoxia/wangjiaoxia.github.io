@@ -173,6 +173,8 @@ $(document).ready(function($) {
 
 	}); // Document Ready
 
+    $('.ds-powered-by a').html("WJX's 个人技术笔记正在使用多说");
+
 }(jQuery)); // End "use strict"
 
 // Enable dropdown sub-menus in off-canvas navigation
@@ -189,3 +191,4 @@ $(document).ready(function($) {
 		}
 	});
 });
+
