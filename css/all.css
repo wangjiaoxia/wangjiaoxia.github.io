@@ -14162,9 +14162,8 @@ footer {
     position: relative;
 }
 
-footer .container #qrcode {
+footer #qrcode {
     position: absolute;
-    top: 50%;
+    bottom: 0;
     left: 5%;
-    margin-top: -60px;
 }
