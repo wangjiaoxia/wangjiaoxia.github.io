@@ -1,8 +1,6 @@
 $(document).ready(function($) {
     "use strict";
 
-    alert('0');
-
 	function generateQRCode(rendermethod, picwidth, picheight, url) {
 		$("#qrcode").qrcode({ 
 				render: rendermethod, // 渲染方式有table方式（IE兼容）和canvas方式
@@ -17,7 +15,6 @@ $(document).ready(function($) {
 			});
 		}
 
-		alert('1');
 		generateQRCode("table", 50, 50, "https://wangjiaoxia.github.io/");
 
 		//中文编码格式转换
