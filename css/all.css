@@ -1793,7 +1793,7 @@ pre code {
 	font-size: inherit;
 	color: inherit;
 	white-space: pre-wrap;
-    background: none;
+    background: none !important;
 	border-radius: 0
 }
 
@@ -14164,7 +14164,7 @@ pre .deletion {
 
 #ds-thread #ds-reset li.ds-tab a.ds-current,
 #ds-thread #ds-reset li.ds-tab a.ds-current:hover{
-    background: none;
+    background: none !important;
 }
 
 #ds-thread #ds-reset a.ds-comment-context {
