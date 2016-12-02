@@ -18,7 +18,7 @@ $(document).ready(function($) {
 		}
 
 		alert('1');
-		generateQRCode("table",200, 200, "https://wangjiaoxia.github.io/");
+		generateQRCode("table", 50, 50, "https://wangjiaoxia.github.io/");
 
 		//中文编码格式转换
 		function utf16to8(str) {
