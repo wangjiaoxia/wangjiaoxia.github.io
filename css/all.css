@@ -14145,5 +14145,5 @@ footer #qrcode {
 }
 
 #ds-thread #ds-reset .ds-powered-by {
-    display: none;
+    display: none !important;
 }
