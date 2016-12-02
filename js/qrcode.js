@@ -1,7 +1,7 @@
 $(document).ready(function($) {
     "use strict";
 
-	function generateQRCode(rendermethod, picwidth, picheight, url) {
+	function getQRCode(rendermethod, picwidth, picheight, url) {
 		$("#qrcode").qrcode({ 
             render: rendermethod, // 渲染方式有table方式（IE兼容）和canvas方式
             width: picwidth, //宽度 
@@ -15,7 +15,7 @@ $(document).ready(function($) {
         });
     }
 
-    generateQRCode("canvas", 200, 200, "https://wangjiaoxia.github.io/");
+    getQRCode("canvas", 200, 200, "https://wangjiaoxia.github.io/");
 
     //中文编码格式转换
     function utf16to8(str) {

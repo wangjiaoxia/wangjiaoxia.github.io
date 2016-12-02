@@ -16,24 +16,25 @@ jquery.qrcode.js 是用jquery方式封装起来的（jquery 版本可以自己�
 * 主要支持的功能：
 
 `
+	function getQRCode(rendermethod, picwidth, picheight, url) {
+		$("#qrcode").qrcode({ 
+            render: rendermethod, // 渲染方式有table方式（IE兼容）和canvas方式
+            width: picwidth, //宽度 
+            height: picheight, //高度 
+            text: utf16to8(url), //内容 
+            typeNumber: -1,//计算模式
+            correctLevel: 2,//二维码纠错级别
+            background: "#ffffff",//背景颜色
+            foreground: "#000000"  //二维码颜色
 
-    text         : "https://wangjiaoxia.github.io/"  //设置二维码内容  
-    render       : "canvas",//设置渲染方式，如果需要兼容性好些就是用table  
-    width        : 256,     //设置宽度  
-    height       : 256,     //设置高度  
-    typeNumber   : -1,      //计算模式  
-    correctLevel : QRErrorCorrectLevel.H,//纠错等级  
-    background : "#ffffff",//背景颜色  
-    foreground : "#000000" //前景颜色 
-
+        });
+    }
 `
 
 * 调用
 
 `
-
-    jQuery('#output').qrcode({width:200,height:200,correctLevel:0,text:content});  
-
+    getQRCode("canvas", 200, 200, "https://wangjiaoxia.github.io/");
 `
 
 * 测试结果
@@ -56,7 +57,6 @@ img2
 * 解决方案
 
 `
-
     function utf16to8(str) {  
         var out, i, len, c;  
         out = "";  
@@ -76,16 +76,13 @@ img2
         } 
         return out;  
     }  
-
 `
 
 * 试用
 
 `
-
     var str = toUtf8("中文字符哦"); 
     $('#qrcode').qrcode(str); 
-
 `
 
 * 测试结果
