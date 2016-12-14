@@ -14138,10 +14138,10 @@ footer {
 }
 
 footer #qrcode {
-    display: none;
     position: absolute;
     bottom: 0;
     left: 5%;
+    border: 10px #fff solid;
 }
 
 #ds-thread #ds-reset .ds-powered-by a {

@@ -15,7 +15,7 @@ $(document).ready(function($) {
         });
     }
 
-    getQRCode("canvas", 200, 200, "https://wangjiaoxia.github.io/");
+    getQRCode("table", 100, 100, "https://wangjiaoxia.github.io/");
 
     //中文编码格式转换
     function utf16to8(str) {
