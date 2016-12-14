@@ -15,7 +15,7 @@ $(document).ready(function($) {
         });
     }
 
-    getQRCode("table", 68, 68, "https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/A_re-introduction_to_JavaScript");
+    getQRCode("table", 68, 68, "https://wangjiaoxia.github.io/");
 
     //中文编码格式转换
     function utf16to8(str) {
