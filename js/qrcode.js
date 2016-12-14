@@ -15,7 +15,7 @@ $(document).ready(function($) {
         });
     }
 
-    getQRCode("table", 68, 68, "https://wangjiaoxia.github.io/");
+    getQRCode("table", 68, 68, "https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&rsv_idx=1&tn=baidu&wd=jq.qrcode%20%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86&oq=jq.qrcode%20%E9%80%82%E7%94%A8%E8%8C%83%E5%9B%B4&rsv_pq=bd08a7e300008650&rsv_t=7f28Y8lxro66maIcJgmNPDPDQKVJUwvC2Hf9AYXPr0tTSGupkfsMcQ%2F%2Bc1M&rqlang=cn&rsv_enter=1&inputT=12964&rsv_sug3=63&rsv_sug1=8&rsv_sug7=100&bs=jq.qrcode%20%E9%80%82%E7%94%A8%E8%8C%83%E5%9B%B4");
 
     //中文编码格式转换
     function utf16to8(str) {
