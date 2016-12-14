@@ -14141,7 +14141,7 @@ footer #qrcode {
     position: absolute;
     bottom: 0;
     left: 5%;
-    /*border: 10px #fff solid;*/
+    border: 10px #fff solid;
 }
 
 #ds-thread #ds-reset .ds-powered-by a {
