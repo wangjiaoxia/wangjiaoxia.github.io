@@ -14141,6 +14141,7 @@ footer #qrcode {
     position: absolute;
     bottom: 0;
     left: 0;
+    z-index: 2;
     border: 10px #fff solid;
 }
 
@@ -14148,10 +14149,11 @@ footer #qrcode #qrcode-img {
     position: absolute;
     top: 50%;
     left: 50%;
+    z-index: 5;
     width: 20px;
     height: 20px;
     margin: -10px 0 0 -10px;
-    background: url(../img/logo.png) no-repeat 0 0;
+    background: url(../img/common/logo.jpg) no-repeat 0 0;
     background-size: contain;
 }
 
