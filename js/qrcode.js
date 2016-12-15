@@ -9,8 +9,8 @@ $(document).ready(function($) {
             text: utf16to8(url), //内容 
             typeNumber: -1,//计算模式
             correctLevel: 2,//二维码纠错级别
-            background: "#ffffff",//背景颜色
-            foreground: "#000000"  //二维码颜色
+            background: "#c00",//背景颜色
+            foreground: "#fff"  //二维码颜色
 
         });
     }
