@@ -32,7 +32,7 @@ title: 安装包下载劫持
 
 一个HTTP报文请求由请求行（起始行）、请求头（首部）、请求数据3个部分。如图所示如下图我们从报文中可以读取到请求信息：
 
-![http baowen](/img/161216/http-baowen.png)
+![http baowen](/img/161216/http-baowen.jpg)
 
 #### 常见的HTTP请求报文头属性 
 
