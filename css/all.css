@@ -14116,6 +14116,10 @@ pre .deletion {
     padding: 80px 20px 20px;
 }
 
+#detail .article-content p img {
+    max-width: 100%;
+}
+
 .article-content ul {
     padding-left: 30px;
 }
