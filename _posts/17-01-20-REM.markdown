@@ -1,0 +1,106 @@
+---
+layout: post 
+title: REM实现前端页面适配  
+---
+
+## 简述
+
+    昨天写了一个webapp单页面，看似很简单的ui却每次都在适配上不那么完美，所以才想记录下在Web中使用什么单位来定义页面的字体大小更合适。相信一直都会听到有人说以PX做为单位好，EM优点多，还有人在说百分比更方便等等，以至于出现了CSS Font-Size: em ／px ／pt ／percent这样的PK大局。不幸的是在不同场景下每个单位有不同的利弊，使的各种技术都不太理想。真是进也难，退也难呀。
+    在细说rem之前先说说px和em;
+
+### px
+
+    在WEB页面初期制作中，我们通常使用“px”来设置文本大小，相对来说他是比较稳定和精确的。但是这个单位值是存在问题的，当用户在浏览器中浏览页面时，随着浏览器的缩放会是的页面的布局被打破。这时px就显得非常无力，所以就要考虑下em和rem了。
+
+### em
+
+    em实质上是一个相对值，而非具体数值。这种技术需要一个参考点，一般都是以<body>的“font-size”为基准。假设html的font-size默认为16px，body字体大小定义为50%，那么在body里字体大小就是1em=8px了。可当你又定义了一个div，然后把字体设置成了50%，请问，现在div下的1em等于多少？因为继承了父级的值，现在这个div里的1em=4px，这么嵌套下去的话，我数学不好的秘密就要暴露了！所有rem就出现了。
+
+### rem
+
+    rem是em的升级版，它只会相对根元素<html>的值，不会受到父级的影响，这样的好处在于：从em里的例子来讲，1rem始终会等于8px。使用的时候不需要重新计算rem此时的大小。rem因为是css3增加的，所以ie8或以下请无视。
+
+    以上就是他们之间的区别和关系，rem更多的适用于移动H5页面的适配中。
+
+### 补坑
+
+    想想似乎哪里不对，虽然rem的换算是没错的，可是我们怎么能确认所有浏览器的默认字体大小就是16px?现在Chrome默认大小可以是12px也可以是16px，那么问题来了，由于国内的几款浏览器内核不是谷歌。所以以上换算不就不转缺了吗？别担心我们可以使用媒体查询media来设置不同的大小，这样常规的设备中都可以精准到每一个像素了
+
+下面是我直接在工具中复制过来的现成rem换算适配代码↓
+
+
+```css
+
+@media only screen and (max-width: 1080px), only screen and (max-device-width:1080px) {
+ html,body {
+ font-size:16.875px;
+ }
+ }
+ @media only screen and (max-width: 960px), only screen and (max-device-width:960px) {
+ html,body {
+ font-size:15px;
+ }
+ }
+ @media only screen and (max-width: 800px), only screen and (max-device-width:800px) {
+ html,body {
+ font-size:12.5px;
+ }
+ }
+ @media only screen and (max-width: 720px), only screen and (max-device-width:720px) {
+ html,body {
+ font-size:11.25px;
+ }
+ }
+ @media only screen and (max-width: 640px), only screen and (max-device-width:640px) {
+ html,body {
+ font-size:10px;
+ }
+ }
+ @media only screen and (max-width: 600px), only screen and (max-device-width:600px) {
+ html,body {
+ font-size:9.375px;
+ }
+ }
+ @media only screen and (max-width: 540px), only screen and (max-device-width:540px) {
+ html,body {
+ font-size:8.4375px;
+ }
+ }
+ @media only screen and (max-width: 480px), only screen and (max-device-width:480px) {
+ html,body {
+ font-size:7.5px;
+ }
+ }
+ @media only screen and (max-width: 414px), only screen and (max-device-width:414px) {
+ html,body {
+ font-size:6.46875px;
+ }
+ }
+ @media only screen and (max-width: 400px), only screen and (max-device-width:400px) {
+ html,body {
+ font-size:6.25px;
+ }
+ }
+ @media only screen and (max-width: 375px), only screen and (max-device-width:375px) {
+ html,body {
+ font-size:5.859375px;
+ }
+ }
+ @media only screen and (max-width: 360px), only screen and (max-device-width:360px) {
+ html,body {
+ font-size:5.625px;
+ }
+ }
+ @media only screen and (max-width: 320px), only screen and (max-device-width:320px) {
+ html,body {
+ font-size:5px;
+ }
+ }
+ @media only screen and (max-width: 240px), only screen and (max-device-width:240px) {
+ html,body {
+ font-size:3.75px;
+ }
+
+```
+在线换算地址[表示很喜欢]：http://mxd.tencent.com/wp-content/uploads/2014/11/rem.html 
+
