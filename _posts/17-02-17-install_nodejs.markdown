@@ -8,7 +8,7 @@ title: 初学nodejs
  这几天闲来无事，就自己看看nodejs。其实我就想知道两个问题，nodejs是什么东东？以及它可以做什么？
 
 ### 什么是nodejs
- Node.js不是JS应用、而是JS运行平台;乍一听我还以为这是一个Javascript应用，事实上Node.js采用C++语言编写而成，是一个Javascript的运行环境。提到Javascript，大家首先想到的是日常使用的浏览器，现代浏览器包含了各种组件，包括渲染引擎、Javascript引擎等，其中Javascript引擎负责解释执行网页中的Javascript代码。作为Web前端最重要的语言之一，Javascript一直是前端工程师的专利。不过，Node.js是一个后端的Javascript运行环境，这意味着你可以编写系统级或者服务器端的Javascript代码，交给Node.js来解释执行，简单的命令类似于：
+ "Node.js不是JS应用、而是JS运行平台"。乍一听我还以为这是一个Javascript应用，事实上Node.js采用C++语言编写而成，是一个Javascript的运行环境。提到Javascript，大家首先想到的是日常使用的浏览器，现代浏览器包含了各种组件，包括渲染引擎、Javascript引擎等，其中Javascript引擎负责解释执行网页中的Javascript代码。作为Web前端最重要的语言之一，Javascript一直是前端工程师的专利。不过，Node.js是一个后端的Javascript运行环境，这意味着你可以编写系统级或者服务器端的Javascript代码，交给Node.js来解释执行，简单的命令类似于：
 
 ```javascript
 $ node helloworld.js
