@@ -55,7 +55,7 @@ $ npm -v
 ```
  安装结束后查看版本即可。
 
-## node.js创建一个应用
+### node.js创建一个应用
 
 如果我们使用PHP来编写后端的代码时，需要Apache 或者 Nginx 的HTTP 服务器，并配上 mod_php5 模块和php-cgi。
 
