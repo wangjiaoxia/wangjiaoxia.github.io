@@ -11,8 +11,9 @@ title: Reactjs - 初学
 
 #### 一、安装
 
-     React 可以直接下载使用，下载包中也提供了很多学习的实例。如果没安装 git，可以在官网 http://facebook.github.io/react/ 下载最新版。准备就绪后开始简单的案例学习：
-     基本代码结构如下
+React 可以直接下载使用，下载包中也提供了很多学习的实例。如果没安装 git，可以在官网 http://facebook.github.io/react/ 下载最新版。准备就绪后开始简单的案例学习：
+
+基本代码结构如下
 
 ```javascript
 <!DOCTYPE html>
@@ -72,7 +73,7 @@ title: Reactjs - 初学
 
 3.ReactDOM.render 是 React 的最基本方法，用于将模板转为 HTML 语言，并插入指定的 DOM 节点。
 
-输出结果为：![react](/img/170303/react-1.png)
+输出结果为：![img react](/img/170303/react-1.png)
 
 #### 二、JSX 语法
 
@@ -137,7 +138,7 @@ React 使用 JSX 来替代常规的 JavaScript。HTML 语言直接写在 JavaScr
 
 5.注释需要写在花括号中；
 
-输出结果为：![react](/img/170303/react-2.png)
+输出结果为：![img react](/img/170303/react-2.png)
 
 #### 三、组件
 
@@ -173,7 +174,7 @@ ReactDOM.render(
 
 5.组件的属性可以在组件类的 this.props 对象上获取，比如 name 属性就可以通过 this.props.name 读取。
 
-输出结果为：![react](/img/170303/react-4.png) ![react](/img/170303/react-5.png)
+输出结果为：![img react](/img/170303/react-4.png) ![img react](/img/170303/react-5.png)
 
 #### 四、React State(状态)
 
