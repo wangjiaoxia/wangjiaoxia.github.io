@@ -11,8 +11,9 @@ title: Reactjs - 初学
 
 #### 一、安装
 
-     React 可以直接下载使用，下载包中也提供了很多学习的实例。如果没安装 git，可以在官网 http://facebook.github.io/react/ 下载最新版。准备就绪后开始简单的案例学习：
-     基本代码结构如下
+React 可以直接下载使用，下载包中也提供了很多学习的实例。如果没安装 git，可以在官网 http://facebook.github.io/react/ 下载最新版。准备就绪后开始简单的案例学习：
+
+基本代码结构如下
 
 ```javascript
 <!DOCTYPE html>
@@ -60,7 +61,7 @@ title: Reactjs - 初学
 </html>
 ```
 
-注意
+注意：
 
 1.react.js 、react-dom.js 和 Browser.js 三个库文件必须先加载
 
@@ -72,7 +73,7 @@ title: Reactjs - 初学
 
 3.ReactDOM.render 是 React 的最基本方法，用于将模板转为 HTML 语言，并插入指定的 DOM 节点。
 
-输出结果为：![react](/img/170303/react-1.png)
+输出结果为：![img react](/img/170303/react-1.png)
 
 #### 二、JSX 语法
 
@@ -123,7 +124,7 @@ React 使用 JSX 来替代常规的 JavaScript。HTML 语言直接写在 JavaScr
 </body>
 ```
 
-注意
+注意：
 
 上面代码体现了 JSX 的基本语法规则：遇到 HTML 标签（以 < 开头），就用 HTML 规则解析；遇到代码块（以 { 开头），就用 JavaScript 规则解析。
 
@@ -137,7 +138,7 @@ React 使用 JSX 来替代常规的 JavaScript。HTML 语言直接写在 JavaScr
 
 5.注释需要写在花括号中；
 
-输出结果为：![react](/img/170303/react-2.png)
+输出结果为：![img react](/img/170303/react-2.png)
 
 #### 三、组件
 
@@ -161,7 +162,7 @@ ReactDOM.render(
 )
 ```
 
-注意
+注意：
 
 1.变量 HelloMessage 就是一个组件类，模板插入 <HelloMessage /> 时，会自动生成 HelloMessage 的一个实例；
 
@@ -173,7 +174,7 @@ ReactDOM.render(
 
 5.组件的属性可以在组件类的 this.props 对象上获取，比如 name 属性就可以通过 this.props.name 读取。
 
-输出结果为：![react](/img/170303/react-4.png) ![react](/img/170303/react-5.png)
+输出结果为：![img react](/img/170303/react-3.png)
 
 #### 四、React State(状态)
 
@@ -207,4 +208,10 @@ ReactDOM.render(
 );
 ```
 
+上面代码创建了一个 LikeBtn 组件，它的 getInitialState 方法用于定义初始状态，也就是一个对象，这个对象可以通过 this.state 属性读取。当用户点击组件，导致状态变化，this.setState 方法就修改状态值，每次修改以后，自动调用 this.render 方法，再次渲染组件。由于 this.props 和 this.state 都用于描述组件的特性，可能会产生混淆。一个简单的区分方法是，this.props 表示那些一旦定义，就不再改变的特性，而 this.state 是会随着用户互动而产生变化的特性。
 
+输出结果为：![img react](/img/170303/react-4.png) ![img react](/img/170303/react-5.png)
+
+*********
+
+这周的学习就先总结到这里了，下周继续总结。文章里的图片不出现是因为图片在其他电脑上忘记上传了，明天要是加班的话就会上传～
