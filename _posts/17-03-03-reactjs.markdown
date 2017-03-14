@@ -136,7 +136,7 @@ React 使用 JSX 来替代常规的 JavaScript。HTML 语言直接写在 JavaScr
 
 4.React 推荐使用内联样式。我们可以使用 camelCase 语法来设置内联样式. React 会在指定元素数字后自动添加 px ；
 
-5.注释需要写在花括号中；
+5.注释需要写在花括号中，多行注释'//'；
 
 输出结果为：![img react](/img/170303/react-2.png)
 
