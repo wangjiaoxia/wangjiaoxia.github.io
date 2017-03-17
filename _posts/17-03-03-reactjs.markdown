@@ -73,6 +73,8 @@ React 可以直接下载使用，下载包中也提供了很多学习的实例�
 
 3.ReactDOM.render 是 React 的最基本方法，用于将模板转为 HTML 语言，并插入指定的 DOM 节点。
 
+4.react并不依赖jQuery，当然我们可以使用jQuery，但是render里面第二个参数必须使用JavaScript原生的getElementByID方法，不能使用jQuery来选取DOM节点。
+
 输出结果为：![img react](/img/170303/react-1.png)
 
 #### 二、JSX 语法
@@ -173,6 +175,8 @@ ReactDOM.render(
 4.组件的用法与原生的 HTML 标签完全一致，可以任意加入属性，比如 <HelloMessage name="John"> ，就是 HelloMessage 组件加入一个 name 属性，值为 lili。
 
 5.组件的属性可以在组件类的 this.props 对象上获取，比如 name 属性就可以通过 this.props.name 读取。
+
+6.组件的style属性的设置方式也值得注意，要写成style={{width: this.state.witdh}}。
 
 输出结果为：![img react](/img/170303/react-3.png)
 
