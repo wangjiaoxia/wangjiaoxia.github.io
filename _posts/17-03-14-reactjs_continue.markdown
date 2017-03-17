@@ -48,7 +48,7 @@ this.props.children 的值有三种可能：如果当前组件没有子节点，
 
 React 提供一个工具方法 React.Children 来处理 this.props.children 。我们可以用 React.Children.map 来遍历子节点，而不用担心 this.props.children 的数据类型是 undefined 还是 object。
 
-### 二、PropTypes
+#### 二、PropTypes
 
 组件类的PropTypes属性，就是用来验证组件实例的属性是否符合要求的。示例代码：
 
@@ -74,7 +74,7 @@ React 提供一个工具方法 React.Children 来处理 this.props.children 。�
 
 输出结果：![img react](/img/170314/react-2.png)
 
-### 三、获取真实的DOM节点 - ref
+#### 三、获取真实的DOM节点 - ref
 
 组件并不是真实的 DOM 节点，而是存在于内存之中的一种数据结构，叫做虚拟 DOM （virtual DOM）。只有当它插入文档以后，才会变成真实的 DOM 。根据 React 的设计，所有的 DOM 变动，都先在虚拟 DOM 上发生，然后再将实际发生变动的部分，反映在真实 DOM上，这种算法叫做 DOM diff ，它可以极大提高网页的性能表现。
 但是，有时需要从组件获取真实 DOM 的节点，这时就要用到 ref 属性：
@@ -104,3 +104,83 @@ React 提供一个工具方法 React.Children 来处理 this.props.children 。�
 React 组件支持很多事件，除了 Click 事件以外，还有 KeyDown 、Copy、Scroll 等。
 
 输出结果：![img react](/img/170314/react-3.png)
+
+#### 四、表单
+
+用户在表单填入的内容，属于用户跟组件的互动，所以不能用 this.props 读取
+
+```javascript
+    var Input =React.createClass({
+        getInitialState : function (){
+            return {value: 'hello!你好'};
+        },
+        handleChange : function (event){
+            this.setState({value: event.target.value});
+        },
+        render: function(){
+            var value = this.state.value;
+            return (
+                    <div>
+                        <input type="text" value={value} onClick={this.handleChange} />
+                        <p>{value}</p>
+                    </div>
+            );
+        }
+    });
+    ReactDOM.render(
+        <Input />,
+        document.getElementById('example')
+    )
+```
+
+文本输入框的值，不能用 this.props.value 读取，而要定义一个 onChange 事件的回调函数，通过 event.target.value 读取用户输入的值。textarea 元素、select元素、radio元素都属于这种情况
+
+输出结果：![img react](/img/170314/react-4.png)
+
+#### 五、组件的生命周期
+
+组件的生命周期分成三个状态：
+
+1. Mounting：已插入真实 DOM
+2. Updating：正在被重新渲染
+3. Unmounting：已移出真实 DOM
+
+React 为每个状态都提供了两种处理函数，will 函数在进入状态之前调用，did 函数在进入状态之后调用，三种状态共计五种处理函数。
+
+componentWillMount()
+componentDidMount()
+componentWillUpdate(object nextProps, object nextState)
+componentDidUpdate(object prevProps, object prevState)
+componentWillUnmount()
+
+做个数学小例子:
+
+```javascript
+var LianXi = React.createClass({
+    getInitialState:function(){
+        return {result: 0};
+    },
+    handlerClick: function () {
+        this.setState({result:this.refs.num1.value * this.refs.num2.value});
+    },
+    render: function () {
+        return (
+            <div>
+                <input type='number' ref='num1'/>
+                <input type='number' ref='num2'/>
+                <button  onClick={this.handlerClick}>求乘数</button>
+                <p >{this.state.result}</p>
+            </div>
+        )
+    }
+});
+ReactDOM.render(<LianXi /> ,document.getElementById('example'));
+```
+
+输出结果：![img react](/img/170314/react-5.png)
+
+*********
+
+心得：整理新知识还真的不能隔时间太长了，要不然要先复习在整理，累~
+
+问：新东家总想着让我们这帮码农加班，包括周六日真是没有天理了，虽然手里是有项目的，但也没必要两天都来，快帮忙想个拒绝他的办法，在线等哦~
