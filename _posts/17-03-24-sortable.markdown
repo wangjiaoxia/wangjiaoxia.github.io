@@ -90,7 +90,7 @@ $(function () {
             var newArr = [];
 
             for (var i = 0; i < indexLen; i++) {
-                newArr.push(index.find('tr').eq(i).attr("data"));   //data是添加在tr上的默认属性
+                newArr.push(index.find('tr').eq(i).attr("data"));   //data是添加在tr上的属性
             }
             alert(newArr);   //输出调整后的结果
         });
