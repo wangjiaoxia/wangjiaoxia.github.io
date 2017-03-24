@@ -99,7 +99,7 @@ $(function () {
 });
 ```
 
-输出结果：![img react](/img/170324/table-1.png)
+输出结果：![img table](/img/170324/table-1.png)
 
 这就写完了，看看注释吧很简单的，输出结果就是当前调整后data的排序了，而且兼容ie7+也是可以的~
 
