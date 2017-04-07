@@ -7,9 +7,9 @@ title: 一个面试题的学习
 
 这道题是实现一个函数，是可以满足下面结果的：
 
->add(1)(2) // 3
->add(1, 2, 3)(10) // 16
->add(1)(2)(3)(4)(5) // 15
+> add(1)(2) // 3
+> add(1, 2, 3)(10) // 16
+> add(1)(2)(3)(4)(5) // 15
 
 ### 答案
 
@@ -41,7 +41,7 @@ function add () {
 
 ### 知识积累
 
-一 文章中提到了“高阶函数”，Javascript的高阶函数就是将函数作为参数或返回值的函数。高阶函数在Javascript中是很常见的，其实我们都已经在使用高阶函数了。
+一、文章中提到了“高阶函数”，Javascript的高阶函数就是将函数作为参数或返回值的函数。高阶函数在Javascript中是很常见的，其实我们都已经在使用高阶函数了。
 
 ```javascript
 function moqi (q1) {
@@ -102,7 +102,7 @@ console.log(text1('I am learning Chinese'));
 console.log(text2('I am a boy'));
 ```
 
-二 Array.prototype.slice.call(arguments);
+二、Array.prototype.slice.call(arguments);
 
 Array.prototype.slice.call(arguments)能将具有length属性的对象转成数组，除了IE下的节点集合（因为ie下的dom对象是以com对象的形式实现的，js对象与com对象不能进行转换）
 
@@ -141,7 +141,7 @@ Array.prototype.slice.call(a);//  [undefined, undefined]
 
 所以，Array.prototype.slice.call(arguments,0)的意思就可以这样理解：对于arguments类数组，调用Array.prototype.slice原型方法，并用call()方法，将作用域限定在arguments中，这里Array.prototype就可以理解为arguments，参数0为slice()方法的第一个参数，即开始位置索引。通过这种方法就将arguments类数组转换成了真数组。
 
-三 concat()
+三、concat()
 
 concat() 方法用于连接两个或多个数组。该方法不会改变现有的数组，而仅仅会返回被连接数组的一个副本。
 
@@ -164,7 +164,7 @@ arr2[3] = 'how';
 console.log(arr.concat(arr1, arr2));
 ```
 
-四 reduce()
+四、reduce()
 
 reduce() 方法接收一个函数作为累加器，数组中的每个值（从左到右）开始缩减，最终为一个值，是ES5中新增的又一个数组逐项处理方法，reduce方法有两个参数，第一个参数是一个callback，用于针对数组项的操作；第二个参数则是传入的初始值，这个初始值用于单个数组项的操作。需要注意的是，reduce方法返回值并不是数组，而是形如初始值的经过叠加处理后的操作。
 
