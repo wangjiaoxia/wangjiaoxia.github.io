@@ -13,7 +13,7 @@ title: 一个面试题的学习
 
 ### 答案
 
-有兴趣的同学可以试着解答一下，这里直接看文章作者的答案吧，不过这个实现方法不是很完美，在chrome 56 55 下，结果正常。在更新到最新的 chrome57 ，控制台下，结果都会带上 function 字段，在 firefox 下，直接不生效。不过光是解决思路和方法就值得我学习了，其他的先不管~
+有兴趣的同学可以试着解答一下，这里直接看文章作者的答案吧，不过这个实现方法不是很完美，在chrome 56 55 下结果正常。在更新到最新的 chrome57 ，控制台下结果都会带上 function 字段，在 firefox 下直接不生效。不过光是解决思路和方法就值得我学习了，其他的先不管~
 
 ```javascript
 function add () {
@@ -41,7 +41,7 @@ function add () {
 
 ### 知识积累
 
-1. 文章中提到了“高阶函数”，Javascript的高阶函数就是将函数作为参数或返回值的函数。高阶函数在Javascript中是很常见的，其实我们都已经在使用高阶函数了。
+一 文章中提到了“高阶函数”，Javascript的高阶函数就是将函数作为参数或返回值的函数。高阶函数在Javascript中是很常见的，其实我们都已经在使用高阶函数了。
 
 ```javascript
 function moqi (q1) {
@@ -56,7 +56,7 @@ function moqi (q1) {
 console.log(moqi('你')('好')('呀'));
 ```
 
-#### 函数作为参数
+1.函数作为参数
 
 众所周知，函数是Javascript中的一等公民，不仅能被赋值，也能和普通变量一样，作为函数的参数。
 
@@ -72,7 +72,7 @@ document.getElementById("btn").addEventListener("click", text);
 
 注意，传递的是 text 而不是 text() 。当你通过不带括号的名字传递一个函数时，传递的是函数对象本身；而传递的名字待括号时，则传递的是函数执行后的结果。
 
-#### 函数作为结果返回
+2.函数作为结果返回
 
 除了可以将函数作为参数之外，Javascript还允许一个函数将另一个函数作为结果返回。因为函数是一个对象，它可以返回任何其他值。但是将函数作为结果返回的意义在于将一个函数定义为另一个函数的返回值，可以允许你创建一个函数，这个函数作为新函数的模板。
 
@@ -102,7 +102,7 @@ console.log(text1('I am learning Chinese'));
 console.log(text2('I am a boy'));
 ```
 
-2. Array.prototype.slice.call(arguments);
+二 Array.prototype.slice.call(arguments);
 
 Array.prototype.slice.call(arguments)能将具有length属性的对象转成数组，除了IE下的节点集合（因为ie下的dom对象是以com对象的形式实现的，js对象与com对象不能进行转换）
 
@@ -118,7 +118,7 @@ Array.prototype.slice.call(a);//  [undefined, undefined]
 
 这里涉及到slice()方法和call()方法，所以先简单说说这两个方法。
 
-#### slice()方法
+1.slice()方法
 
 数组和字符串都有这个slice方法，这个方法的作用是截取一段数据。它接收两个参数，第一个参数是要截取的位置索引，第二参数可选，表示要截取到的结束位置，但是不包括结束位置。在数组中，该方法的返回值是包含截取元素的组成的数组，在字符串中，该方法的返回值是包含截取字符串组成的字符串。
 
@@ -141,7 +141,7 @@ Array.prototype.slice.call(a);//  [undefined, undefined]
 
 所以，Array.prototype.slice.call(arguments,0)的意思就可以这样理解：对于arguments类数组，调用Array.prototype.slice原型方法，并用call()方法，将作用域限定在arguments中，这里Array.prototype就可以理解为arguments，参数0为slice()方法的第一个参数，即开始位置索引。通过这种方法就将arguments类数组转换成了真数组。
 
-3. concat()
+三 concat()
 
 concat() 方法用于连接两个或多个数组。该方法不会改变现有的数组，而仅仅会返回被连接数组的一个副本。
 
@@ -164,7 +164,7 @@ arr2[3] = 'how';
 console.log(arr.concat(arr1, arr2));
 ```
 
-4. reduce()
+四 reduce()
 
 reduce() 方法接收一个函数作为累加器，数组中的每个值（从左到右）开始缩减，最终为一个值，是ES5中新增的又一个数组逐项处理方法，reduce方法有两个参数，第一个参数是一个callback，用于针对数组项的操作；第二个参数则是传入的初始值，这个初始值用于单个数组项的操作。需要注意的是，reduce方法返回值并不是数组，而是形如初始值的经过叠加处理后的操作。
 
