@@ -5,7 +5,7 @@ title: VUE.JS入门
 
 #### 简述
 
-  刚开始进入vue的学习行列中，由于是入门所以都是最基础的知识开始了，如有错误之处请指正~
+  刚开始进入vue的学习行列中，由于是入门所以就从最基础的知识开始了，如有错误之处请指正~
 
 #### 一、环境
 
@@ -13,31 +13,30 @@ title: VUE.JS入门
 * vue-cli 脚手架构建工具
 * cnpm  npm的淘宝镜像
 
-##### 安装node.js
+#### 安装node.js
 
   在官网下载并安装node.js，过程很简单一路“下一步”就可以了，安装之后执行 node -v 即可查看当前版本；
-  由于我的电脑已安装了node，执行以下命令直接升级:
+  由于我的电脑已安装了node，执行以下命令直接升级；npm包管理器是集成在node中的，所以直接输入 npm -v
+  就会如下图所示，显示出npm的版本信息:
 
 ```javascript
 npm install -g n
 ```
-  npm包管理器，是集成在node中的，所以直接输入 npm -v 就会如下图所示，显示出npm的版本信息:
 
 ![img vue](/img/170505/1.png)
 
   node环境已经安装完成，npm包管理器也有了。由于有些npm有些资源被屏蔽或者是国外资源的原因，经常会导致用
-  npm安装依赖包的时候失败，所以我们还需要npm的国内镜像---cnpm。
+npm安装依赖包的时候失败，所以我们还需要npm的国内镜像---cnpm。
 
-##### 安装cnpm
+#### 安装cnpm
 
-  在命令行中输入 npm install -g cnpm --registry=http://registry.npm.taobao.org 然后等待，安装
-  完成如下图：
+  在命令行中输入 npm install -g cnpm --registry=http://registry.npm.taobao.org 然后等待，安装完成如下图：
 
 ![img vue](/img/170505/2.png)
 
   完成之后，我们就可以用cnpm代替npm来安装依赖包了。
 
-##### 安装vue-cli脚手架构建工具
+#### 安装vue-cli脚手架构建工具
 
   在命令行中运行命令 npm install -g vue-cli ，然后等待安装完成如下图：
 
@@ -47,7 +46,7 @@ npm install -g n
 
 #### 二、用vue-cli构建项目
 
-##### 创建项目
+#### 创建项目
 
   首先选定目录，然后再命令行中把目录转到选定的目录。
 
@@ -69,7 +68,7 @@ npm install -g n
 
 ![img vue](/img/170505/6.png)
 
-##### 安装项目所需的依赖
+#### 安装项目所需的依赖
 
 要安装依赖包，首先cd到项目文件夹（firstVue文件夹），然后运行命令 cnpm install ，等待安装。
 
