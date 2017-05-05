@@ -96,10 +96,74 @@ npm安装依赖包的时候失败，所以我们还需要npm的国内镜像---cn
 
 ![img vue](/img/170505/10.png)
 
-如果看到这个页面，那就可以开屏香槟来庆祝了，恭喜你，项目运行成功了。
+如果看到这个页面，那就说明项目运行成功了。
 
 #### 四、Demo
 
+```javascript
+    <body>
+        <div id="app">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Sex</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="person in people">
+                        <td>{{ person.name  }}</td>
+                        <td>{{ person.age  }}</td>
+                        <td>{{ person.sex  }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+    <script src="js/vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                people: [{
+                    name: 'Jack',
+                    age: 30,
+                    sex: 'Male'
+                }, {
+                    name: 'Bill',
+                    age: 26,
+                    sex: 'Male'
+                }, {
+                    name: 'Tracy',
+                    age: 22,
+                    sex: 'Female'
+                }, {
+                    name: 'Chris',
+                    age: 36,
+                    sex: 'Male'
+                }]
+            }
+        })
+    </script>
+```
+
+这是一个简单的例子，我们在选项对象的data属性中定义了一个people数组，然后在#app元素内使用v-for遍历
+people数组，输出每个person对象的姓名、年龄和性别。代码中用到了"v-for"指令，下一篇接着学习；
+
+代码输出：
+
+![img vue](/img/170505/11.png)
+
+****
+
+ 在写完例子的时候我突然想到一个问题，既然可以在html中直接引入vue.js就可以使用，为什么还要搭建环境？
+
+ 使用npm引入是方便包管理。等到应用需要的库和框架多起来后，一个个从html里引入就不方便了。所以用到打包工具
+ 比如webpack，可以直接require引入之后将不同模块打包成单个js文件。同时这些工具提供各种自动化处理，让前端
+ 开发更爽。
+
+ 还有Vue.js是数据驱动，和JQuery思路不同，你几乎不需要自己进行复杂低效的dom操作，开发简介明了。
 
 
 
