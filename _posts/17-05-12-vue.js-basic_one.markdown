@@ -1,0 +1,69 @@
+---
+layout: post
+title: VUE.JS - 基础(一)
+---
+
+#### 声明式渲染
+
+代码：
+```javascript
+<div id="app-1">
+  <span v-bind:title="message">
+    内容1内容1内容1内容1内容1
+  </span>
+</div>
+
+<script>
+	var app1 = new Vue({
+		el: '#app-1',
+		data: {
+			message: '标题一'
+		}
+	})
+</script>
+```
+
+测试代码：
+```javascript
+app1.text = '新内容',
+app1.message = '新标题'
+```
+
+解析：
+v-bind 属性被称为指令。指令带有前缀 v-，以表示它们是 Vue.js 提供的特殊属性。这段代码是将这个
+元素节点的 title 属性和 Vue 实例的 message 属性绑定到一起。打开浏览器的控制台输入测试代码，
+就会看到这个绑定了title属性的HTML已经被更新了。
+
+#### 条件与循环
+
+代码：
+```javascript
+<div id="app-2">
+    <div v-if="list">
+        <ol>
+            <li v-for="name in names">
+                {{ name.text }}
+            </li>
+        </ol>
+    </div>
+</div>
+
+<script>
+	var app2 = new Vue({
+		el: '#app-2',
+		data: {
+			list: true,
+			names: [
+				{text: 'Dali'},
+				{text: 'Nili'},
+				{text: 'MIni'}
+			]
+		}
+	})
+</script>
+```
+
+解析：
+我们不仅可以绑定 DOM 文本到数据，也可以绑定 DOM 结构到数据。以上条件和循环指令的使用
+没有添加任何事件学起来比较简单。
+
