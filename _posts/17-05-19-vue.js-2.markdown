@@ -62,25 +62,25 @@ v-show也是条件渲染指令，和v-if指令不同的是，使用v-show指令�
 单地为元素设置CSS的style属性。
 
 ```javascript
-    <div id="app">
-        <h1>Hello, Vue.js!</h1>
-        <h1 v-show="yes">Yes!</h1>
-        <h1 v-show="no">No!</h1>
-        <h1 v-show="age >= 25">Age: {{ age }}</h1>
-        <h1 v-show="name.indexOf('jack') >= 0">Name: {{ name }}</h1>
-    </div>
+<div id="app">
+    <h1>Hello, Vue.js!</h1>
+    <h1 v-show="yes">Yes!</h1>
+    <h1 v-show="no">No!</h1>
+    <h1 v-show="age >= 25">Age: {{ age }}</h1>
+    <h1 v-show="name.indexOf('jack') >= 0">Name: {{ name }}</h1>
+</div>
 
-    <script>
-        var vm = new Vue({
-            el: '#app',
-            data: {
-                yes: true,
-                no: false,
-                age: 28,
+<script>
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            yes: true,
+            no: false,
+            age: 28,
                 name: 'keepfool'
-            }
-        })
-    </script>
+        }
+    })
+</script>
 ```
 
 在Chrome控制台更改age属性，使得表达式age >= 25的值为false，可以看到<h1>Age: 24</h1>元素被设置了
@@ -92,24 +92,24 @@ style="display:none"样式。
 ——否则它不能被识别。
 
 ```javascript
-    <div id="test-else">
-		<span v-if="age >= 10">Age: {{age}}</span>
-		<span v-else>name: {{name}}</span>
-		<br>
-		<span v-show="age <= 10">Age: {{age}}</span>
-		<span v-else>sex: {{sex}}</span>
-	</div>
+<div id="test-else">
+    <span v-if="age >= 10">Age: {{age}}</span>
+    <span v-else>name: {{name}}</span>
+    <br>
+    <span v-show="age <= 10">Age: {{age}}</span>
+    <span v-else>sex: {{sex}}</span>
+</div>
 
-    <script>
-	    new Vue({
-            el: '#test-else',
-            data: {
-    	        age: 4,
-    	        name: "Jon",
-    	        sex: "男"
-            }
-        });
-    <script>
+<script>
+    new Vue({
+        el: '#test-else',
+        data: {
+            age: 4,
+            name: "Jon",
+            sex: "男"
+        }
+    });
+<script>
 ```
 v-else元素是否渲染在HTML中，取决于前面使用的是v-if还是v-show指令。
 这段代码中v-if为true，后面的v-else不会渲染到HTML；v-show为tue，但是后面的v-else仍然渲染到HTML了。
@@ -122,28 +122,28 @@ v-for="item in items"
 items是一个数组，item是当前被遍历的数组元素。
 
 ```javascript
-    <div id="test-for">
-		<ul v-for="list in lists">
-			<li>{{list.name}}</li>
-			<li>{{list.age}}</li>
-		</ul>
-	</div>
+<div id="test-for">
+    <ul v-for="list in lists">
+        <li>{{list.name}}</li>
+        <li>{{list.age}}</li>
+    </ul>
+</div>
 
-    new Vue({
-        el: "#test-for",
-        data: {
-            lists: [{
-			    name: 'Jon',
-			    age: 10
-		    },{
-			    name: 'You',
-			    age: 20
-		    },{
-			    name: 'Lida',
-			    age: 30
-		    }]
-	    }
-    })
+new Vue({
+    el: "#test-for",
+    data: {
+        lists: [{
+            name: 'Jon',
+            age: 10
+        },{
+            name: 'You',
+            age: 20
+        },{
+            name: 'Lida',
+            age: 30
+        }]
+    }
+})
 ```
 
 在选项对象的data属性中定义了一个lists数组，然后在#test-for元素内使用v-for遍历people数组，输出
@@ -158,23 +158,23 @@ v-bind:argument="expression"
 这个指令包含一个表达式，表达式的含义是：高亮当前页。
 
 ```javascript
-    <div id="test-bind">
-		<ul class="pagination">
-			<li v-for="n in pageCount">
-				<a href="javascripit:void(0)" v-bind:class="activeNumber === n ? 'active' : ''">{{ n }}</a>
-			</li>
-		</ul>
-	</div>
+<div id="test-bind">
+    <ul class="pagination">
+        <li v-for="n in pageCount">
+            <a href="javascripit:void(0)" v-bind:class="activeNumber === n ? 'active' : ''">{{ n }}</a>
+        </li>
+    </ul>
+</div>
 
-	<script>
-        new Vue({
-    	    el: "#test-bind",
-    	    data: {
-    		    activeNumber: 1,
-    		    pageCount: 10
-    	    }
-        });
-    </script>
+<script>
+    new Vue({
+        el: "#test-bind",
+        data: {
+            activeNumber: 1,
+            pageCount: 10
+        }
+    });
+</script>
 ```
 
 #### v-on指令
