@@ -1,0 +1,217 @@
+---
+layout: post
+title: VUE.JS - 指令
+---
+
+#### 简述
+
+  Vue.js的指令是以v-开头的，它们作用于HTML元素，指令提供了一些特殊的特性，将指令绑定在元素上时，
+  指令会为绑定的目标元素添加一些特殊的行为，也可以将指令看作特殊的HTML特性（attribute）。
+  Vue.js提供了以下几个常用的内置指令：
+
+  v-if指令
+  v-show指令
+  v-else指令
+  v-for指令
+  v-bind指令
+  v-on指令
+  Vue.js具有良好的扩展性，我们也可以开发一些自定义的指令。
+
+#### v-if指令
+
+v-if是条件渲染指令，它根据表达式的真假来删除和插入元素，它的基本语法如下：
+
+v-if="expression"
+expression是一个返回bool值的表达式，表达式可以是一个bool属性，也可以是一个返回bool的运算式。
+测试则可在控制台中执行测试代码。。。
+
+```javascript
+    <div id="test-if">
+		<h1 v-if="yes">测试标题</h1>
+		<p v-if="no">测试内容，测试内容。测试内容，测试内容。</p>
+		<p v-if="textnum >= 110">测试内容可以输入{{ textnum }}字！</p>
+		<span v-if="name.indexOf('Jon') >= 0">{{name}}</span>
+	</div>
+
+    <script>
+	    new Vue({
+            el: "#test-if",
+            data: {
+    	        yes: true,
+    	        no: false,
+    	        textnum: 100,
+    	        name: 'Jon'
+            }
+        });
+    <script>
+```
+
+这段代码使用了4个表达式：
+
+数据的yes属性为true，所以"Yes!"会被输出；
+数据的no属性为false，所以"No!"不会被输出；
+运算式age >= 25返回true，所以"测试内容可以输入110字！"会被输出；
+运算式name.indexOf('Jon') >= 0返回yes，所以"Jon"会被输出。
+
+注意：v-if指令是根据条件表达式的值来执行元素的插入或者删除行为。
+这一点可以从渲染的HTML源代码看出来，面上属性为false的标签元素没有渲染到HTML。
+
+#### v-show指令
+
+v-show也是条件渲染指令，和v-if指令不同的是，使用v-show指令的元素始终会被渲染到HTML，它只是简
+单地为元素设置CSS的style属性。
+
+```javascript
+    <div id="app">
+        <h1>Hello, Vue.js!</h1>
+        <h1 v-show="yes">Yes!</h1>
+        <h1 v-show="no">No!</h1>
+        <h1 v-show="age >= 25">Age: {{ age }}</h1>
+        <h1 v-show="name.indexOf('jack') >= 0">Name: {{ name }}</h1>
+    </div>
+
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                yes: true,
+                no: false,
+                age: 28,
+                name: 'keepfool'
+            }
+        })
+    </script>
+```
+
+在Chrome控制台更改age属性，使得表达式age >= 25的值为false，可以看到<h1>Age: 24</h1>元素被设置了
+style="display:none"样式。
+
+#### v-else指令
+
+可以用v-else指令为v-if或v-show添加一个“else块”。v-else元素必须立即跟在v-if或v-show元素的后面
+——否则它不能被识别。
+
+```javascript
+    <div id="test-else">
+		<span v-if="age >= 10">Age: {{age}}</span>
+		<span v-else>name: {{name}}</span>
+		<br>
+		<span v-show="age <= 10">Age: {{age}}</span>
+		<span v-else>sex: {{sex}}</span>
+	</div>
+
+    <script>
+	    new Vue({
+            el: '#test-else',
+            data: {
+    	        age: 4,
+    	        name: "Jon",
+    	        sex: "男"
+            }
+        });
+    <script>
+```
+v-else元素是否渲染在HTML中，取决于前面使用的是v-if还是v-show指令。
+这段代码中v-if为true，后面的v-else不会渲染到HTML；v-show为tue，但是后面的v-else仍然渲染到HTML了。
+
+#### v-for指令
+
+v-for指令基于一个数组渲染一个列表，它和JavaScript的遍历语法相似：
+
+v-for="item in items"
+items是一个数组，item是当前被遍历的数组元素。
+
+```javascript
+    <div id="test-for">
+		<ul v-for="list in lists">
+			<li>{{list.name}}</li>
+			<li>{{list.age}}</li>
+		</ul>
+	</div>
+
+    new Vue({
+        el: "#test-for",
+        data: {
+            lists: [{
+			    name: 'Jon',
+			    age: 10
+		    },{
+			    name: 'You',
+			    age: 20
+		    },{
+			    name: 'Lida',
+			    age: 30
+		    }]
+	    }
+    })
+```
+
+在选项对象的data属性中定义了一个lists数组，然后在#test-for元素内使用v-for遍历people数组，输出
+每个person对象的姓名、年龄和性别。
+
+#### v-bind指令
+
+v-bind指令可以在其名称后面带一个参数，中间放一个冒号隔开，这个参数通常是HTML元素的特性（attribute），例如：v-bind:class
+
+v-bind:argument="expression"
+下面这段代码构建了一个简单的分页条，v-bind指令作用于元素的class特性上。
+这个指令包含一个表达式，表达式的含义是：高亮当前页。
+
+```javascript
+    <div id="test-bind">
+		<ul class="pagination">
+			<li v-for="n in pageCount">
+				<a href="javascripit:void(0)" v-bind:class="activeNumber === n ? 'active' : ''">{{ n }}</a>
+			</li>
+		</ul>
+	</div>
+
+	<script>
+        new Vue({
+    	    el: "#test-bind",
+    	    data: {
+    		    activeNumber: 1,
+    		    pageCount: 10
+    	    }
+        });
+    </script>
+```
+
+#### v-on指令
+
+v-on指令用于给监听DOM事件，它的用语法和v-bind是类似的，例如监听<a>元素的点击事件：
+
+<a v-on:click="doSomething">
+有两种形式调用方法：绑定一个方法（让事件指向方法的引用），或者使用内联语句。
+Greet按钮将它的单击事件直接绑定到greet()方法，而Hi按钮则是调用say()方法。
+
+```javascript
+<div id="app-1">
+    <p><input type="text" v-model="message"/></p>
+    <p>
+        <!-- click直接绑定 -->
+        <button v-on:click="greet">Greet</button>
+    </p>
+    <p>
+        <!-- click内连语句 -->
+        <button v-on:click="say('Hi')">Hi</button>
+    </p>
+</div>
+
+var Dom2 = new Vue({
+    el: "#app-1",
+	data: {
+		message: 'Hello, Vue.js!'
+	},
+	methods: {
+		greet: function () {
+			alert(this.message);
+		},
+		say: function (msg) {
+			alert(msg);
+		}
+	}
+});
+```
+
+
