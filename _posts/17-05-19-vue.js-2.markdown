@@ -223,21 +223,21 @@ var Dom2 = new Vue({
 
 <script>
     Vue.directive('color', {
-	    inserted: function (el) {
-		    setInterval(function () {
-			    var colors = Math.floor(Math.random()*1000000);
-			        el.style.color = '#' + colors;
-					//alert('#' + colors);
-				}, 1000);
-			}
-		});
+        inserted: function (el) {
+        setInterval(function () {
+            var colors = Math.floor(Math.random()*1000000);
+            el.style.color = '#' + colors;
+                //alert('#' + colors);
+            }, 1000);
+        }
+    });
 
-		new Vue({
-			el: "#con",
-			data: {
-				text: "测试内容测试内容测试内容"
-		}
-	})
+    new Vue({
+        el: "#con",
+        data: {
+            text: "测试内容测试内容测试内容"
+        }
+    });
 </script>
 ```
 
