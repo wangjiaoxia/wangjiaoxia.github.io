@@ -26,24 +26,24 @@ expression是一个返回bool值的表达式，表达式可以是一个bool属�
 测试则可在控制台中执行测试代码。。。
 
 ```javascript
-    <div id="test-if">
-		<h1 v-if="yes">测试标题</h1>
-		<p v-if="no">测试内容，测试内容。测试内容，测试内容。</p>
-		<p v-if="textnum >= 110">测试内容可以输入{{ textnum }}字！</p>
-		<span v-if="name.indexOf('Jon') >= 0">{{name}}</span>
-	</div>
+<div id="test-if">
+    <h1 v-if="yes">测试标题</h1>
+    <p v-if="no">测试内容，测试内容。测试内容，测试内容。</p>
+    <p v-if="textnum >= 110">测试内容可以输入{{ textnum }}字！</p>
+    <span v-if="name.indexOf('Jon') >= 0">{{name}}</span>
+</div>
 
-    <script>
-	    new Vue({
-            el: "#test-if",
-            data: {
-    	        yes: true,
-    	        no: false,
-    	        textnum: 100,
-    	        name: 'Jon'
-            }
-        });
-    <script>
+<script>
+    new Vue({
+    el: "#test-if",
+        data: {
+            yes: true,
+            no: false,
+            textnum: 100,
+            name: 'Jon'
+        }
+    });
+<script>
 ```
 
 这段代码使用了4个表达式：
