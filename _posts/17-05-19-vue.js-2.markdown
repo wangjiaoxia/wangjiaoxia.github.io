@@ -214,4 +214,32 @@ var Dom2 = new Vue({
 });
 ```
 
+#### 自定义指令
+
+自定义一个1秒切换文字颜色的指令
+
+```javascript
+<p id="con" v-color>{{text}}</p>
+
+<script>
+    Vue.directive('color', {
+	    inserted: function (el) {
+		    setInterval(function () {
+			    var colors = Math.floor(Math.random()*1000000);
+			        el.style.color = '#' + colors;
+					//alert('#' + colors);
+				}, 1000);
+			}
+		});
+
+		new Vue({
+			el: "#con",
+			data: {
+				text: "测试内容测试内容测试内容"
+		}
+	})
+</script>
+```
+
+以上代码会让p中的文字随机添加color值；
 
