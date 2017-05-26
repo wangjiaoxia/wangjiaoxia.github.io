@@ -1,0 +1,169 @@
+---
+layout: post
+title: VUE.JS - 组件
+---
+
+#### 简述
+
+组件是Vue.js最强大的功能之一。组件可以扩展HTML元素，封装可重用的代码。在较高层面上，组件是自定义的元素，
+Vue.js的编译器为它添加特殊功能。在有些情况下，组件也可以是原生HTML元素的形式，以is特性扩展。
+
+#### 如何注册组件
+
+需要使用Vue.extend方法创建一个组件，然后使用Vue.component方法注册组件。Vue.extend方法格式如下：
+
+```javascript
+var MyComponent = Vue.extend({
+    // 后面再介绍
+})
+```
+
+如果想要其他地方使用这个创建的组件，还得个组件命个名：
+
+```javascript
+Vue.component('my-component', MyComponent)
+```
+
+命名之后即可在HTML标签中使用这个组件名称，像使用DOM元素一样。下面来看看一个完整的组件注册和使用例子。
+
+代码如下：
+
+```javascript
+<div id="example">
+    <my-component></my-component>
+</div>
+
+<script>
+    // 定义
+    var MyComponent = Vue.extend({
+        template: '<div>A custom component!</div>'
+    })
+
+    // 注册
+    Vue.component('my-component', MyComponent)
+
+    // 创建根实例
+    new Vue({
+        el: '#example'
+    })
+</script>
+```
+
+输出结果：
+
+```javascript
+<div id="example">
+    <div>A custom component!</div>
+</div>
+```
+
+#### 嵌套组件
+
+组件本身也可以包含组件，下面的parent组件就包含了一个命名为child-component组件，但这个组件只能
+被parent组件使用:
+
+```javascript
+var child = Vue.extend({
+    template: '<div>A custom component!</div>'
+});
+
+var parent = Vue.extend({
+    template: '<div>Parent Component: <child-component></child-component></div>',
+    components: {
+        'child-component': child
+    }
+});
+
+Vue.component("parent-component", parent);
+```
+
+上面的定义过程比较繁琐，也可以不用每次都调用Vue.component和Vue.extend方法:
+
+```javascript
+//在一个步骤中扩展与注册
+Vue.component('my-component', {
+    template: '<div>A custom component!</div>'
+})
+
+//局部注册也可以这么做
+var Parent = Vue.extend({
+    components: {
+        'my-component': {
+            template: '<div>A custom component!</div>'
+        }
+    }
+})
+```
+
+
+#### 动态组件
+
+多个组件可以使用同一个挂载点，然后动态的在他们之间切换。使用保留的<component>元素，动态地绑定到它的
+is特性。下面的列子在同一个vue实例下挂了home、posts、archive三个组件，通过特性currentView动态切换
+组件显示。
+
+代码如下：
+
+```javascript
+<div id="dynamic">
+    <button id="home">Home</button>
+    <button id="posts">Posts</button>
+    <button id="archive">Archive</button>
+    <br>
+    <component :is="currentView"></component>
+</div>
+
+<script>
+var vue = new Vue({
+    el:"#dynamic",
+    data: {
+        currentView: "home"
+    },
+    components: {
+        home:{
+            template: "Home"
+        },
+        posts: {
+            template: "Posts"
+        },
+        archive: {
+            template: "Archive"
+        }
+    }
+});
+document.getElementById("home").onclick = function(){
+    vue.currentView = "home";
+};
+document.getElementById("posts").onclick = function(){
+    vue.currentView = "posts";
+};
+document.getElementById("archive").onclick = function(){
+    vue.currentView = "archive";
+};
+</script>
+```
+
+不自动把 item 注入组件的原因是这会导致组件跟当前 v-for 紧密耦合。显式声明数据来自哪里可以让组件复用在
+其它地方。
+
+#### 组件和v-for
+
+```javascript
+<my-component v-for="item in items"></my-component>
+```
+
+不能传递数据给组件，因为组件的作用域是独立的。为了传递数据给组件，应当使用props:
+
+```javascript
+<my-component
+    v-for="item in items"
+    :item="item"
+    :index="$index">
+</my-component>
+```
+不自动把 item 注入组件的原因是这会导致组件跟当前 v-for 紧密耦合。显式声明数据来自哪里可以让组件复用
+在其它地方。
+
+
+****
+  以上是组件的初步认识，抽时间在添加一个例子。。。
