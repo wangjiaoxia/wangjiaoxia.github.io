@@ -27,6 +27,9 @@ style 只能是一些属性列表组合成的字符串；这限制了在使用�
         }
     })
 </script>
+
+↓ 执行结果：
+<div class="otherClass class1">我是内容</div>
 ```
 
 另一种写法:
@@ -47,6 +50,9 @@ style 只能是一些属性列表组合成的字符串；这限制了在使用�
         }
     })
 </script>
+
+↓ 执行结果：
+<div class="otherClass name2">我是内容</div>
 ```
 
 #### 用数组的方法绑定class
@@ -67,9 +73,12 @@ style 只能是一些属性列表组合成的字符串；这限制了在使用�
         }
     })
 </script>
+
+↓ 执行结果：
+<div class="otherClass name1 name2">我是内容</div>
 ```
 
-另一种写法:
+在数组中还可以用判断是否显示这个类名:
 
 ```javascript
 <div class="test">
@@ -86,6 +95,9 @@ style 只能是一些属性列表组合成的字符串；这限制了在使用�
         }
     })
 </script>
+
+↓ 执行结果：
+<div class="otherClass name1">我是内容</div>
 ```
 
 #### 用数组和对象混合的方法绑定class
@@ -107,6 +119,9 @@ style 只能是一些属性列表组合成的字符串；这限制了在使用�
         }
     })
 </script>
+
+↓ 执行结果：
+<div class="otherClass name1 class2">我是内容</div>
 ```
 
 #### 用对象的方式实现style绑定
@@ -127,6 +142,9 @@ style 只能是一些属性列表组合成的字符串；这限制了在使用�
         }
     })
 </script>
+
+↓ 执行结果：
+<div class="otherClass" style="coloe: red; width: 100px;">我是内容</div>
 ```
 
 另一种写法:
@@ -146,6 +164,9 @@ style 只能是一些属性列表组合成的字符串；这限制了在使用�
         }
     })
 </script>
+
+↓ 执行结果：
+<div class="otherClass" style="coloe: pink; width: 200px;">我是内容</div>
 ```
 
 #### 用数组和对象混合的方式实现style绑定
@@ -171,6 +192,9 @@ style 只能是一些属性列表组合成的字符串；这限制了在使用�
         }
     })
 </script>
+
+↓ 执行结果：
+<div class="otherClass" style="width: 200px; coloe: red; top: 20px;">我是内容</div>
 ```
 
 
