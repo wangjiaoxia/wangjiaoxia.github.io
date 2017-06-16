@@ -1,0 +1,174 @@
+---
+layout: post
+title: VUE.JS - 绑定class和style样式
+---
+
+#### 简述
+
+在使用组件的时候，不可避免的要去使用内联的 style 属性去设置标签样式，按照常规的使用，
+style 只能是一些属性列表组合成的字符串；这限制了在使用组件时可以自定义或者动态改变样式，
+而 Vue 对标签的 style 属性进行了优化，从而使其可以支持对象/字符串/数组形式的赋值。
+
+#### 用对象的方法绑定class
+
+示例代码如下：
+
+```javascript
+<div class="test">
+    <div class="otherClass" :class="{'class1':name1,'class2':name2}">我是内容</div>
+</div>
+
+<script type="text/javascript">
+    var myVue = new Vue({
+        el:".test",
+        data: {
+            name1: true,
+            name2: false,
+        }
+    })
+</script>
+```
+
+关于使用对象绑定class,还可以用另外一种写法:
+
+```javascript
+<div class="test">
+    <div class="test" :class="classObj">我是内容</div>
+</div>
+
+<script type="text/javascript">
+    var myVue = new Vue({
+        el:".test",
+        data: {
+            classObj: {
+                name1: false,
+                name2: true
+            }
+        }
+    })
+</script>
+```
+
+#### 用数组的方法绑定class
+
+示例代码如下：
+
+```javascript
+<div class="test">
+    <div class="otherClass" :class="[class1,class2]">我是内容</div>
+</div>
+
+<script type="text/javascript">
+    var myVue = new Vue({
+        el:".test",
+        data: {
+            class1: 'name1',
+            class2: 'name2',
+        }
+    })
+</script>
+```
+
+其实在数组中还可以用判断是否显示这个类名,举个例子:
+
+```javascript
+<div class="test">
+    <div class="otherClass" :class="[class1,isShow? class2:'']">我是内容</div>
+</div>
+
+<script type="text/javascript">
+    var myVue = new Vue({
+        el:".test",
+        data: {
+            class1: 'name1',
+            class2: 'name2',
+            isShow: false
+        }
+    })
+</script>
+```
+
+#### 用数组和对象混合的方法绑定class
+
+示例代码如下：
+
+```javascript
+<div class="test">
+    <div class="otherClass" :class="[class1,{class2: isShow}]">我是内容</div>
+</div>
+
+<script type="text/javascript">
+    var myVue = new Vue({
+        el:".test",
+        data: {
+            class1: 'name1',
+            class2: 'name2',
+            isShow: true
+        }
+    })
+</script>
+```
+
+#### 用对象的方式实现style绑定
+
+示例代码如下：
+
+```javascript
+<div class="test">
+    <div class="otherClass" :style="{color: yanse,width: kuan + 'px' }">我是内容</div>
+</div>
+
+<script type="text/javascript">
+    var myVue = new Vue({
+        el:".test",
+        data: {
+            yanse: 'red',
+            kuan: 100,
+        }
+    })
+</script>
+```
+
+其实也可以写为第二种方式:
+
+```javascript
+<div class="test">
+            <div class="otherClass" :style="styleObj">我是内容</div>
+</div>
+<script type="text/javascript">
+    var myVue = new Vue({
+        el:".test",
+        data: {
+            styleObj: {
+                color: 'pink',
+                width: '200px',
+            }
+        }
+    })
+</script>
+```
+
+#### 用数组和对象混合的方式实现style绑定
+
+示例代码如下：
+
+```javascript
+<div class="test">
+    <div class="otherClass" :style="[styleObjectA,styleObjectB]">我是内容</div>
+</div>
+
+<script type="text/javascript">
+    var myVue = new Vue({
+        el:".test",
+        data: {
+            styleObjectA: {
+                color: 'red',
+                width: '100px',
+            },
+            styleObjectB: {
+                top: '20px'
+            }
+        }
+    })
+</script>
+```
